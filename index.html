@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Music Player</title>
+</head>
+
+<body>
+    <div>
+        <h1>My Music Player</h1>
+    </div>
+    <div>
+        <h1>Search bar</h1>
+        <input type="text" id="searchInput" placeholder="Enter song or artist">
+        <button id="searchBtn">Search</button>
+    </div>
+    <div id="searchResults">
+        <h2>Search Results</h2>
+        <ul id="resultsList"></ul>
+    </div>
+    <div id="audioPlayer">
+        <h2>Audio Player</h2>
+        <p id="songName">Song name: </p>
+        <p id="songArtist">Song Artist: </p>
+        <p id="songAlbum">Song Album: </p>
+        <audio id="myAudio" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
