@@ -41,5 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
             Authorization: `Bearer ${accessToken}`,
           },
         };
+    
+        return fetch(apiUrl, apiOptions)
+          .then((response) => response.json())
+          .then((data) => data.tracks.items)
+          .catch((error) => {
+            console.error("Error fetching search results:", error);
+            return [];
+          });
+      }
 
 });
