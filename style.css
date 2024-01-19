@@ -60,3 +60,31 @@ body {
 .search-results-cont {
     padding: 20px;
 }
+
+.search-results-cont h2 {
+    font-size: 18px;
+}
+
+.search-results-cont ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.search-results-cont li {
+    padding: 10px;
+    background-color: #fff;
+    width: 30%;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.search-results-cont li:hover {
+    background-color: #ff6700;
+}
+
+li.active {
+    background-color: #ff6700;
+    color: #fff;
+}
