@@ -22,5 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
           },
           body: "grant_type=client_credentials",
         };
-        
+    
+        return fetch(tokenUrl, tokenOptions)
+          .then((response) => response.json())
+          .then((data) => {
+            accessToken = data.access_token;
+          })
+          .catch((error) => console.error("Error obtaining access token:", error));
+      }
+
 });
