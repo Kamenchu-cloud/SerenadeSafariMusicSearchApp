@@ -63,4 +63,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
+      function playTrack(track) {
+        audio.src = track.preview_url;
+        songName.textContent = `Song name: ${track.name}`;
+        songArtist.textContent = `Song Artist: ${track.artists[0].name}`;
+        songAlbum.textContent = `Song Album: ${track.album.name}`;
+      }
+    
+
 });
