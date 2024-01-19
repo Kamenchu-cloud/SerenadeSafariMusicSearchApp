@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let accessToken;
 
     // Function to authenticate with the Spotify API and obtain an access token
-    function authenticateSpotify() {
+    async function authenticateSpotify() {
         const tokenUrl = "https://accounts.spotify.com/api/token";
         const base64Credentials = btoa(`${clientId}:${clientSecret}`);
         const tokenOptions = {
@@ -27,16 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
             body: "grant_type=client_credentials",
         };
 
-        return fetch(tokenUrl, tokenOptions)
-            .then((response) => response.json())
-            .then((data) => {
-                accessToken = data.access_token;
-            })
-            .catch((error) => console.error("Error obtaining access token:", error));
+        try {
+            const response = await fetch(tokenUrl, tokenOptions);
+            const data_1 = await response.json();
+            accessToken = data_1.access_token;
+        } catch (error) {
+            return console.error("Error obtaining access token:", error);
+        }
     }
 
     // Function to search for tracks on Spotify
-    function searchSpotify(query) {
+    async function searchSpotify(query) {
         const apiUrl = `https://api.spotify.com/v1/search?q=${encodeURIComponent(query)}&type=track`;
 
         const apiOptions = {
@@ -45,26 +46,31 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         };
 
-        return fetch(apiUrl, apiOptions)
-            .then((response) => response.json())
-            .then((data) => data.tracks.items)
-            .catch((error) => {
-                console.error("Error fetching search results:", error);
-                return [];
-            });
+        try {
+            const response = await fetch(apiUrl, apiOptions);
+            const data = await response.json();
+            return data.tracks.items;
+        } catch (error) {
+            console.error("Error fetching search results:", error);
+            return [];
+        }
     }
 
+    // Function to display search results in the HTML
     function displayResults(results) {
         resultsList.innerHTML = "";
         results.forEach((result, index) => {
+            // Create a list item for each result
             const listItem = document.createElement("li");
             listItem.textContent = `${index + 1}. ${result.name} - ${result.artists[0].name}`;
 
+            // Add a click event listener to play the selected track
             listItem.addEventListener("click", () => playTrack(result));
             resultsList.appendChild(listItem);
         });
     }
 
+    // Function to play the selected track
     function playTrack(track) {
         audio.src = track.preview_url;
         songName.textContent = `Song name: ${track.name}`;
@@ -72,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         songAlbum.textContent = `Song Album: ${track.album.name}`;
     }
 
+    // Event listener for the "click" event on the search button
     searchBtn.addEventListener("click", async () => {
         // Get the user's search query
         const query = searchInput.value.trim();
