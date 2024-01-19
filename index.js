@@ -80,5 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
       displayResults(results);
     });
   
+    // Initialize by authenticating with Spotify
+    authenticateSpotify().catch((error) => {
+      console.error("Error during initial authentication:", error);
+    });
   });
   
