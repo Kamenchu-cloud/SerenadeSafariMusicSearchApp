@@ -9,26 +9,39 @@
 </head>
 
 <body>
-    <div>
-        <h1>My Music Player</h1>
+    <!-- heading -->
+    <div class="nav">
+        <h1>Serenade Music Player</h1>
     </div>
-    <div>
-        <h1>Search bar</h1>
-        <input type="text" id="searchInput" placeholder="Enter song or artist">
+    <div class="mini-nav">
+        <p>Search and listen to your favorite music.</p>
+    </div>
+    <!-- search bar -->
+    <div class="search-bar-cont">
+        <input type="text" id="searchInput" placeholder="Enter song...">
         <button id="searchBtn">Search</button>
     </div>
-    <div id="searchResults">
-        <h2>Search Results</h2>
-        <ul id="resultsList"></ul>
+    <hr />
+    <!-- search results -->
+    <div id="searchResults" class="search-results-cont">
+        <h2>Available songs: (click on song to listen on player)</h2>
+        <ul id="resultsList">
+        </ul>
     </div>
-    <div id="audioPlayer">
-        <h2>Audio Player</h2>
-        <p id="songName">Song name: </p>
-        <p id="songArtist">Song Artist: </p>
-        <p id="songAlbum">Song Album: </p>
-        <audio id="myAudio" controls>
-            Your browser does not support the audio element.
-        </audio>
+    <hr/>
+    <!-- audio player -->
+    <div id="audioPlayer" class="audio-player-cont">
+        <div class="audio-mini-cont">
+            <h2>Audio Player</h2>
+            <div class="song-info-cont">
+                <p id="songName">Song name: (no song selected yet) </p>
+                <p id="songArtist">Song Artist: (no song selected yet)</p>
+                <p id="songAlbum">Song Album: (no song selected yet) </p>
+            </div>
+            <audio id="myAudio" controls>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
     <script src="./index.js"></script>
 </body>
