@@ -73,21 +73,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     searchBtn.addEventListener("click", async () => {
+        // Get the user's search query
         const query = searchInput.value.trim();
         if (query === "") {
+            // Display an alert if the user hasn't entered anything
             alert("You have not entered anything yet.");
             return;
         }
 
         if (!accessToken) {
+            // If access token is not available, authenticate with Spotify
             console.error("Access token is not available. Authenticating...");
             await authenticateSpotify();
         }
 
+        // Search for tracks on Spotify and display the results
         const results = await searchSpotify(query);
         displayResults(results);
     });
 
+    // Initialize by authenticating with Spotify during the initial load
     authenticateSpotify().catch((error) => {
         console.error("Error during initial authentication:", error);
     });
