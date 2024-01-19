@@ -88,3 +88,30 @@ li.active {
     background-color: #ff6700;
     color: #fff;
 }
+
+.audio-player-cont{    
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;    
+}
+
+.audio-mini-cont{
+    background-color: #fff;
+    width: 70%;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.audio-player-cont h2{
+    font-size: 18px;
+}
+
+.song-info-cont{
+    margin: 10px;
+}
+
+audio{
+    margin-top: 10px;
+}
