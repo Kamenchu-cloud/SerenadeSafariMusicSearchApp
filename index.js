@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const songAlbum = document.getElementById("songAlbum");
 
     // Spotify API credentials
-    const clientId = "28d7316839b3472dbd3c5fc2c32fe164";
-    const clientSecret = "ad3c13ad455647c2891e0e390e5550a3";
+    const clientId = "dbd515100bed4bf0a6415d42b481c6de";
+    const clientSecret = "5f05d12ae9c24d1ea9835628bc7e97ad";
     let accessToken;
 
     // Function to authenticate with the Spotify API and obtain an access token
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
             resultsList.appendChild(listItem);
         });
     }
-
+    
     // Function to play the selected track
     function playTrack(track) {
         audio.src = track.preview_url;

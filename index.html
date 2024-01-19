@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>My Music Player</title>
 </head>
 
@@ -39,8 +39,9 @@
                 <p id="songAlbum">Song Album: (no song selected yet) </p>
             </div>
             <audio id="myAudio" controls>
-                Your browser does not support the audio element.
+                
             </audio>
+            <div id="likeHeart" class="heart" onclick="toggleLike()">&hearts;</div>
         </div>
     </div>
 

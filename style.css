@@ -125,3 +125,14 @@ footer {
     bottom: 0; 
     width: 100%;
 }
+
+heart {
+    font-size: 24px;
+    color: grey; /* Default color */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.heart.liked {
+    color: red; /* Color when liked */
+}
