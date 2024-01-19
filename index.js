@@ -30,5 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
           })
           .catch((error) => console.error("Error obtaining access token:", error));
       }
+    
+    function searchSpotify(query) {
+        const apiUrl = `https://api.spotify.com/v1/search?q=${encodeURIComponent(
+          query
+        )}&type=track`;
+    
+        const apiOptions = {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        };
 
 });
