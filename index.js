@@ -77,6 +77,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
   
+      if (!accessToken) {
+        console.error("Access token is not available. Authenticating...");
+        await authenticateSpotify();
+      }
+  
+      const results = await searchSpotify(query);
       displayResults(results);
     });
   
