@@ -31,3 +31,32 @@ body {
     text-align: center;
     font-size: 16px;
 }
+
+.search-bar-cont {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.search-bar-cont input {
+    padding: 20px;
+    width: 70%;
+    border: 0.5px solid white;
+    border-radius: 12px;
+}
+
+.search-bar-cont button {
+    background-color: #ff6700;
+    padding: 20px;
+    border: none;
+    border-radius: 12px;
+    width: 80px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.search-results-cont {
+    padding: 20px;
+}
