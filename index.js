@@ -51,4 +51,16 @@ document.addEventListener("DOMContentLoaded", function () {
           });
       }
 
+      function displayResults(results) {
+        resultsList.innerHTML = "";
+        results.forEach((result, index) => {
+          const listItem = document.createElement("li");
+          listItem.textContent = `${index + 1}. ${result.name} - ${
+            result.artists[0].name
+          }`;
+          listItem.addEventListener("click", () => playTrack(result));
+          resultsList.appendChild(listItem);
+        });
+      }
+
 });
