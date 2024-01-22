@@ -42,6 +42,10 @@ The application provides only track previews, respecting copyright constraints. 
 Spotify Account:
 A Spotify account is not required for searching and previewing tracks. 
 
+# Github Pages
+
+link; https://github.com/Kamenchu-cloud/SerenadeSafariMusicSearchApp
+
 # Technical Details
 
 
