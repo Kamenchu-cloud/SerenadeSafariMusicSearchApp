@@ -44,7 +44,7 @@ A Spotify account is not required for searching and previewing tracks.
 
 # Github Pages
 
-link; https://github.com/Kamenchu-cloud/SerenadeSafariMusicSearchApp
+link; https://kamenchu-cloud.github.io/SerenadeSafariMusicSearchApp/
 
 # Technical Details
 
